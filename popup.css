@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(19, 31, 83);
+    color: white;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; 
+}
+
+.container {
+    
+    width: 580px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    background-color: rgb(19, 39, 83);
+    border: 2px solid black;  
+}
+
+.country {
+    font-size: 50px;
+}
+
+.options {
+    font-size: 16px;
+}
+
+.title {
+    font-size: 75px; 
+    color: white;
+    padding-top: 50px;
+}
+
+.intro {
+    font-size: 17px;  
+    color: white;
+    padding-bottom: 40px;
+}
+
+
