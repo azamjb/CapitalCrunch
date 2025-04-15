@@ -16,6 +16,8 @@ Don't worry if you get it wrong; Capital Crunch is here to help you learn!
 
 User-Friendly Interface: With its intuitive and clean design, Capital Crunch makes learning geography simple and enjoyable.
 
+Download the chrome extension here:
 
+https://chromewebstore.google.com/detail/capital-crunch/fhgeookgniglhkejjidlnedccfkhlmbb
 
 <img width="593" alt="Screenshot 2023-07-11 at 2 17 10 PM" src="https://github.com/azamjb/CapitalCrunch/assets/85136312/a818e530-784b-40fa-a398-5731a2e0c9e1">
