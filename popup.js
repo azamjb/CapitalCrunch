@@ -77,7 +77,7 @@ let countries = {
     "Hungary": "Budapest",
     "Iceland": "Reykjavik",
     "India": "New Delhi",
-    "Indonesia": "Jakarta",
+    "Indonesia": "Nusantara",
     "Iran": "Tehran",
     "Iraq": "Baghdad",
     "Ireland": "Dublin",
@@ -86,7 +86,7 @@ let countries = {
     "Jamaica": "Kingston",
     "Japan": "Tokyo",
     "Jordan": "Amman",
-    "Kazakhstan": "Nur-Sultan",
+    "Kazakhstan": "Astana",
     "Kenya": "Nairobi",
     "Kiribati": "Tarawa Atoll",
     "Korea, North": "Pyongyang",
@@ -228,10 +228,15 @@ let countries = {
         let selectedCapital = elem.value;
         let correctCapital = countries[document.getElementById('country').innerText];
 
+        optionElems.forEach(el => el.disabled = true);
+
+        let resultElem = document.getElementById('result');
         if (selectedCapital === correctCapital) {
-            document.getElementById('result').innerText = "Correct!";
+            resultElem.innerText = "Correct!";
+            resultElem.className = 'correct';
         } else {
-            document.getElementById('result').innerText = `Wrong! The correct answer is ${correctCapital}`;
+            resultElem.innerText = `Wrong! The answer is ${correctCapital}`;
+            resultElem.className = 'incorrect';
         }
 
         // Add a delay before closing the popup window
