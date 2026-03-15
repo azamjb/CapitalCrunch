@@ -4,22 +4,49 @@
     <link rel="stylesheet" type="text/css" href="options.css">
 </head>
 <body>
-    <div class="container">
 
+    <div id="onboarding" class="onboarding-overlay hidden">
+        <div class="onboarding-content">
+            <h1 class="onboarding-title">Capital Crunch</h1>
+            <p class="onboarding-sub">World capitals, quizzed at your own pace.</p>
+            <p class="onboarding-features">Set frequency &middot; Filter regions &middot; Pause anytime</p>
+            <button id="onboardingDone" class="onboarding-btn">Get Started</button>
+        </div>
+    </div>
+
+    <div class="container">
         <h1 class="title">Capital Crunch</h1>
 
-        <select class="intervals" id="intervals">
-            <option value="10">10 minutes</option>
-            <option value="30">30 minutes</option>
-            <option value="60">1 hour</option>
-            <option value="120">2 hours</option>
-            <option value="180">3 hours</option>
-        </select>
+        <div class="field">
+            <select class="intervals" id="intervals">
+                <option value="10">Every 10 minutes</option>
+                <option value="30">Every 30 minutes</option>
+                <option value="60">Every hour</option>
+                <option value="120">Every 2 hours</option>
+                <option value="180">Every 3 hours</option>
+                <option value="custom">Custom interval...</option>
+            </select>
+            <div id="customWrapper" class="custom-wrapper hidden">
+                <input type="number" id="customMinutes" class="custom-input" min="1" max="1440" placeholder="Minutes">
+                <button id="customSet" class="custom-set-btn">Set</button>
+            </div>
+            <p class="hint">Opens a quiz tab every <strong id="intervalDisplay">10 minutes</strong></p>
+        </div>
 
-        <p class="spacer"></p>
+        <div class="field">
+            <p class="field-label">Regions</p>
+            <div class="pills">
+                <label class="pill"><input type="checkbox" class="region-check" value="Africa"><span>Africa</span></label>
+                <label class="pill"><input type="checkbox" class="region-check" value="Americas"><span>Americas</span></label>
+                <label class="pill"><input type="checkbox" class="region-check" value="Asia"><span>Asia</span></label>
+                <label class="pill"><input type="checkbox" class="region-check" value="Europe"><span>Europe</span></label>
+                <label class="pill"><input type="checkbox" class="region-check" value="Oceania"><span>Oceania</span></label>
+            </div>
+        </div>
 
-        <button class="start" id="toggleButton" data-playing="true">&#9654;</button> 
+        <button class="toggle-btn" id="toggleButton" data-playing="true">&#9654;</button>
     </div>
+
     <script src="options.js"></script>
 </body>
 </html>

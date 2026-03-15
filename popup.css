@@ -34,8 +34,21 @@ body {
 .intro {
     font-size: 15px;
     color: rgba(255, 255, 255, 0.55);
-    margin: 0 0 32px;
+    margin: 0 0 14px;
     letter-spacing: 0.3px;
+}
+
+.streak-display {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.12);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 20px;
+    padding: 4px 14px;
+    margin-bottom: 18px;
+    display: none;
+    letter-spacing: 0.2px;
 }
 
 .container {
@@ -99,15 +112,34 @@ body {
     display: none;
 }
 
-.options input[type="radio"]:disabled + span {
-    opacity: 0.5;
-}
-
-.options input[type="radio"]:disabled ~ * ,
-.options label:has(input:disabled) {
+/* Dimmed state for non-highlighted disabled options */
+.options label:has(input:disabled):not(.correct-answer):not(.wrong-answer) {
     cursor: default;
     pointer-events: none;
-    opacity: 0.55;
+    opacity: 0.38;
+    transform: none;
+}
+
+/* Correct answer highlight */
+.options label.correct-answer {
+    background: rgba(74, 222, 128, 0.15);
+    border-color: #4ade80;
+    color: #4ade80;
+    cursor: default;
+    pointer-events: none;
+    opacity: 1;
+    transform: none;
+}
+
+/* Wrong answer highlight */
+.options label.wrong-answer {
+    background: rgba(248, 113, 113, 0.12);
+    border-color: #f87171;
+    color: #f87171;
+    cursor: default;
+    pointer-events: none;
+    opacity: 1;
+    transform: none;
 }
 
 #result {
@@ -124,4 +156,13 @@ body {
 
 #result.incorrect {
     color: #f87171;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to   { opacity: 0; transform: scale(0.97); }
+}
+
+body.fade-out {
+    animation: fadeOut 0.4s ease forwards;
 }
